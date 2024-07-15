@@ -1,0 +1,18 @@
+package Recursion;
+
+public class PrintSubsequences {
+    public static void main(String args[]){
+        String str = "abc";
+        System.out.println("The string is "+str);
+        printSub(str,"");
+    }
+    public static void printSub(String str, String ans){
+        if(str.length()==0){
+            System.out.println(ans);
+            return;
+        }
+        char ch = str.charAt(0);
+        printSub(str.substring(1),ans+ch);
+        printSub(str.substring(1),ans);
+    }
+}
